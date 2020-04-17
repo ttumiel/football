@@ -12,12 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+
+
+
+
 from . import *
+
 
 def build_scenario(builder):
   builder.config().game_duration = 500
-  builder.config().right_team_difficulty = 0.10
-  builder.config().left_team_difficulty = 0.10
+  builder.config().right_team_difficulty = 0.5
+  builder.config().left_team_difficulty = 0.5
   builder.config().deterministic = False
   if builder.EpisodeNumber() % 2 == 0:
     first_team = Team.e_Left
