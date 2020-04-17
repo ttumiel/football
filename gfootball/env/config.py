@@ -91,7 +91,11 @@ class Config(object):
         'real_time': False,
         'tracesdir': '/tmp/dumps',
         'video_quality_level': 0,  # 0 - low, 1 - medium, 2 - high
-        'write_video': False
+        'write_video': False,
+        'left_players': None,
+        'right_players': None,
+        'difficulty': 0.1,
+        'duration': None,
     }
     if values:
       self._values.update(values)

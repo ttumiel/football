@@ -97,6 +97,10 @@ def create_environment(env_name='',
                        extra_players=None,
                        number_of_left_players_agent_controls=1,
                        number_of_right_players_agent_controls=0,
+                       left_players=None,
+                       right_players=None,
+                       difficulty=0.1,
+                       duration=None,
                        channel_dimensions=(
                            observation_preprocessing.SMM_WIDTH,
                            observation_preprocessing.SMM_HEIGHT)):
@@ -166,6 +170,10 @@ def create_environment(env_name='',
         controls.
     number_of_right_players_agent_controls: Number of right players an agent
         controls.
+    left_players: number of players on the left team. Only used in n_vs_n
+    right_players: number of players on the right team. Only used in n_vs_n
+    difficulty: difficulty level of the opponents. Only used in n_vs_n
+    duration: number of frames to play. Only used in n_vs_n
     channel_dimensions: (width, height) tuple that represents the dimensions of
        SMM or pixels representation.
   Returns:
@@ -184,6 +192,10 @@ def create_environment(env_name='',
       'level': env_name,
       'tracesdir': logdir,
       'write_video': write_video,
+      'left_players': left_players,
+      'right_players': right_players,
+      'difficulty': difficulty,
+      'duration': duration,
   })
   env = football_env.FootballEnv(c)
   if render:
